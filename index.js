@@ -9,8 +9,12 @@ app.use(express.json());
 app.use(cors());
 
 const {BookRouter} = require("./routes/books.route")
+app.get("/",(req,res)=>{
 
-app.use("/",BookRouter)
+    res.send("Home Page")
+})
+
+app.use("/books",BookRouter)
 
 
 
